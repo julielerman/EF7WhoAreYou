@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22512.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF7NoSQL.SamuraiDomain", "EF7NoSQL.SamuraiDomain\EF7NoSQL.SamuraiDomain.csproj", "{1054F59D-5236-4CCF-ABA0-F9B2288D9F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF7NoSQL.Data", "SamuraiContext\EF7NoSQL.Data.csproj", "{12963CAA-A033-4D96-BF63-14FE86FBEBFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{A377E966-E7EE-4A20-A5A2-079AC4A4694C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1054F59D-5236-4CCF-ABA0-F9B2288D9F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1054F59D-5236-4CCF-ABA0-F9B2288D9F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1054F59D-5236-4CCF-ABA0-F9B2288D9F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1054F59D-5236-4CCF-ABA0-F9B2288D9F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12963CAA-A033-4D96-BF63-14FE86FBEBFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12963CAA-A033-4D96-BF63-14FE86FBEBFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12963CAA-A033-4D96-BF63-14FE86FBEBFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12963CAA-A033-4D96-BF63-14FE86FBEBFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A377E966-E7EE-4A20-A5A2-079AC4A4694C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A377E966-E7EE-4A20-A5A2-079AC4A4694C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A377E966-E7EE-4A20-A5A2-079AC4A4694C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A377E966-E7EE-4A20-A5A2-079AC4A4694C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
