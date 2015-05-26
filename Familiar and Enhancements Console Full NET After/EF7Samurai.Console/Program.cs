@@ -9,17 +9,7 @@ namespace EF7Samurai.ConsoleApp
   class Program
   {
     static void Main(string[] args) {
-      //Initializers are gone. Use Migraitons!
-      //for testing, these Explicit methods are great.
-      //in presentation, I discussed that magic db init is gone from EF7
-      //dropping & recreating the db takes a little extra time
-      //note that I created a custom overload to ensure SQLServer is used
-
-   
-      using (var context = new SamuraiContext(true)) {
-        context.Database.EnsureDeleted();
-        context.Database.EnsureCreated();
-      }
+     
 
 
       PlayWithContext();
@@ -43,7 +33,7 @@ namespace EF7Samurai.ConsoleApp
     private static void PlayWithContext() {
       using (var context = new SamuraiContext()) {
         context.Samurais.Add(Samurai_KK);
-        context.Add(Samurai_KO); ;
+        context.Add(Samurai_KO); 
 
         context.Samurais.AddRange(Samurai_KS, Samurai_S, Samurai_HH);
                 
@@ -64,7 +54,17 @@ namespace EF7Samurai.ConsoleApp
 
 
     private static void Batch_CUD() {
+      //Initializers are gone. Use Migraitons!
+      //for testing, these Explicit methods are great.
+      //in presentation, I discussed that magic db init is gone from EF7
+      //dropping & recreating the db takes a little extra time
+      //note that I created a custom overload to ensure SQLServer is used
 
+
+      using (var context = new SamuraiContext(true)) {
+        context.Database.EnsureDeleted();
+        context.Database.EnsureCreated();
+      }
       Console.WriteLine("If you want to see the effect of this method, switch the context builder options to the UseSqlServer code and also start your db profiler. Press any key to continue...");
 
       using (var context = new SamuraiContext(true)) {
@@ -107,7 +107,7 @@ namespace EF7Samurai.ConsoleApp
         //EF4.3 -> EF6: context.Entry(newSamurai).State == EntityState.Added;
         context.Entry(newSamurai).State=EntityState.Added;
         Utils.DisplayState(context, "Entry/State Attach New Graph");
-        Console.WriteLine("Attach new Graph with Entry method complete. There were two new entities but this method only adds the root entity. Press ENTER to continue to next demo");
+        Console.WriteLine("Attach new Graph with Entry method complete. ");
         Console.ReadKey();
 
       }
