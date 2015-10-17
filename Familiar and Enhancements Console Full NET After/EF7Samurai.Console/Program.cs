@@ -104,8 +104,7 @@ namespace EF7Samurai.ConsoleApp
     private static void AttachNewGraphUsingEntry() {
       Samurai newSamurai = Utils.CreateNewSamuraiNewQuoteGraph();
       using (var context = new SamuraiContext()) {
-        //EF4.3 -> EF6: context.Entry(newSamurai).State == EntityState.Added;
-        context.Entry(newSamurai).State=EntityState.Added;
+         context.Entry(newSamurai).State=EntityState.Added;
         Utils.DisplayState(context, "Entry/State Attach New Graph");
         Console.WriteLine("Attach new Graph with Entry method complete. ");
         Console.ReadKey();
@@ -117,7 +116,7 @@ namespace EF7Samurai.ConsoleApp
       Samurai newSamurai = Utils.CreateNewSamuraiNewQuoteGraph();
       using (var context = new SamuraiContext()) {
         context.ChangeTracker.TrackGraph(newSamurai,
-          e => e.State=EntityState.Added); 
+          e => e.NodeState=EntityState.Added); 
         Utils.DisplayState(context, "AttachGraph (no callback) New Graph");
         Console.WriteLine("AttachGraph demo complete. Press ENTER to continue to next demo");
         Console.ReadKey();

@@ -21,7 +21,7 @@ namespace EF7Samurai.Context
         
       }
       else {
-        optionsBuilder.UseInMemoryStore();
+        optionsBuilder.UseInMemoryDatabase();
       }
 
      
