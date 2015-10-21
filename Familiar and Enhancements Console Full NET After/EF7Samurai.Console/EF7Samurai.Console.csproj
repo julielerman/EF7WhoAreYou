@@ -127,8 +127,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EF7Samurai.Context\EF7Samurai.Context.csproj">
-      <Project>{e08c5ea5-0987-49b4-a37e-c745ab20ecaa}</Project>
+    <ProjectReference Include="..\EF7Samurai.B8.Context\EF7Samurai.Context.csproj">
+      <Project>{24861343-93c5-4ebb-92b3-36bc0f4be3fc}</Project>
       <Name>EF7Samurai.Context</Name>
     </ProjectReference>
     <ProjectReference Include="..\EF7Samurai.Domain\EF7Samurai.Domain.csproj">

@@ -1,7 +1,7 @@
 ﻿using EF7Samurai.Domain;
 using Microsoft.Data.Entity;
 
-namespace EF7Samurai.B8.Context
+namespace EF7Samurai.Context
 {
   
   public class SamuraiContext : DbContext
