@@ -8,6 +8,13 @@ namespace EF7Samurai.ConsoleApp
 {
   class Program
   {
+    static  Samurai Samurai_KK;
+    static  Samurai Samurai_KS;
+    static  Samurai Samurai_S;
+    static  Samurai Samurai_KO;
+    static  Samurai Samurai_HH;
+    static Samurai Samurai_KZ;
+    static Samurai Samurai_GK;
     static void Main(string[] args) {
      
 
@@ -18,19 +25,20 @@ namespace EF7Samurai.ConsoleApp
       AttachNewGraphViaChangeTracker();
     
     }
-
-    static Samurai Samurai_KK = new Samurai { Name = "Kikuchiyo" };
-    static Samurai Samurai_KS = new Samurai { Name = "Kambei Shimada" };
-    static Samurai Samurai_S = new Samurai { Name = "Shichirōji" };
-    static Samurai Samurai_KO = new Samurai { Name = "Katsushirō Okamoto" };
-    static Samurai Samurai_HH = new Samurai { Name = "Heihachi Hayashida" };
-    static Samurai Samurai_KZ = new Samurai { Name = "Kyūzō" };
-    static Samurai Samurai_GK = new Samurai { Name = "Gorōbei Katayama" };
-
+    private static void InstantiateSamurais() {
+       Samurai_KK = new Samurai { Name = "Kikuchiyo" };
+        Samurai_KS = new Samurai { Name = "Kambei Shimada" };
+        Samurai_S = new Samurai { Name = "Shichirōji" };
+        Samurai_KO = new Samurai { Name = "Katsushirō Okamoto" };
+        Samurai_HH = new Samurai { Name = "Heihachi Hayashida" };
+        Samurai_KZ = new Samurai { Name = "Kyūzō" };
+        Samurai_GK = new Samurai { Name = "Gorōbei Katayama" };
+    }
 
 
 
     private static void PlayWithContext() {
+      InstantiateSamurais();
       using (var context = new SamuraiContext()) {
         context.Samurais.Add(Samurai_KK);
         context.Add(Samurai_KO); 
@@ -60,19 +68,22 @@ namespace EF7Samurai.ConsoleApp
       //dropping & recreating the db takes a little extra time
       //note that I created a custom overload to ensure SQLServer is used
 
-
-      using (var context = new SamuraiContext()) {
+      InstantiateSamurais();
+      using (var context = new SamuraiContext(true)) {
         context.Database.EnsureDeleted();
         context.Database.EnsureCreated();
       }
       Console.WriteLine("If you want to see the effect of this method, switch the context builder options to the UseSqlServer code and also start your db profiler. Press any key to continue...");
 
-      using (var context = new SamuraiContext()) {
+      using (var context = new SamuraiContext(true)) {
+
+
+
         context.Samurais.AddRange(Samurai_KK, Samurai_KS, Samurai_GK);
         context.SaveChanges();
       }
 
-      using (var context = new SamuraiContext()) {
+      using (var context = new SamuraiContext(true)) {
         var samurais = context.Samurais.ToList();
         samurais[0].Name += "The Glorious";
         var ks = samurais.FirstOrDefault(n => n.Name.Contains("Shimada"));
@@ -112,7 +123,8 @@ namespace EF7Samurai.ConsoleApp
       }
 
     }
-    private static void AttachNewGraphViaChangeTracker() {
+    private static void AttachNewGraphViaChangeTracker() 
+      {
       Samurai newSamurai = Utils.CreateNewSamuraiNewQuoteGraph();
       using (var context = new SamuraiContext()) {
         context.ChangeTracker.TrackGraph(newSamurai,
