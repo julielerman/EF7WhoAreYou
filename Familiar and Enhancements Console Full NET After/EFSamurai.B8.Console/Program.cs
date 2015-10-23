@@ -41,7 +41,7 @@ namespace EF7Samurai.ConsoleApp
       InstantiateSamurais();
       using (var context = new SamuraiContext()) {
         context.Samurais.Add(Samurai_KK);
-        context.Add(Samurai_KO); 
+        context.Add(Samurai_KO);
 
         context.Samurais.AddRange(Samurai_KS, Samurai_S, Samurai_HH);
                 
