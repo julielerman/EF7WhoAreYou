@@ -161,7 +161,6 @@ namespace TestProject
         Assert.AreEqual(0, context.Quotes.Count());
 
       }
-
     }
     [TestMethod]
     public void New_DisconnectedPatterns_AttachNewGraphViaChangeTracker() {
