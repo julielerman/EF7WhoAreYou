@@ -8,9 +8,10 @@ using EF7Samurai.Context;
 namespace EF7Samurai.B8.Context.Migrations
 {
     [DbContext(typeof(SamuraiContext))]
-    partial class SamuraiContextModelSnapshot : ModelSnapshot
+    [Migration("20151023195617_TestingBattlesNav")]
+    partial class TestingBattlesNav
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .Annotation("ProductVersion", "7.0.0-beta8-15964")

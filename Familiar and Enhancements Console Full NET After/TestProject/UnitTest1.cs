@@ -16,20 +16,20 @@ namespace TestProject
     [TestMethod]
     public void BackwardsCompatible_DbSetAddAndAddRangeOnSingleObjects() {
       InstantiateSamurais();
-      using (var context = new SamuraiContext()) {
+      using (var context = new SamuraiContext(true)) {
         ResetContext(context);
         context.Samurais.Add(Samurai_KK);
         context.Samurais.AddRange(Samurai_KS, Samurai_S, Samurai_HH);
-              context.SaveChanges();
+        context.SaveChanges();
         Assert.AreEqual(4, context.Samurais.Count());
 
       }
     }
-    
+
     [TestMethod]
     public void New_DbContextAddAndAddRange_DetectsType() {
       InstantiateSamurais();
-      using (var context = new SamuraiContext()) {
+      using (var context = new SamuraiContext(true)) {
         ResetContext(context);
         context.Add(Samurai_KO);
         var quote = new Quote { Text = "oh my!" };
@@ -44,10 +44,10 @@ namespace TestProject
     [TestMethod]
     public void BackwardsCompatible_BasicLinqQueryingStillWorks() {
       InstantiateSamurais();
-      using (var context = new SamuraiContext()) {
+      using (var context = new SamuraiContext(true)) {
         //Arrange
         ResetContext(context);
-        context.Samurais.AddRange(Samurai_KS, Samurai_S, Samurai_HH,Samurai_GK);
+        context.Samurais.AddRange(Samurai_KS, Samurai_S, Samurai_HH, Samurai_GK);
         context.SaveChanges();
 
         //Act
@@ -62,30 +62,98 @@ namespace TestProject
 
         Assert.AreEqual(samurai.Name, "Heihachi Hayashida");
 
-
       }
     }
 
-   
-
-    [TestMethod]
-    public void New_DisconnectedPatterns_DbSetAddAndAddRange_AddsRootOnly() {
+    private void CreateAndSeedDbForEagerLoad() {
       InstantiateSamurais();
       Samurai_GK.Quotes.Add(new Quote { Text = "oh my!" });
+      var aMaker = new Maker { Name = "A Maker" };
+      Samurai_GK.Swords.Add(new Sword { Maker = aMaker, WeightGrams = 100 });
       using (var context = new SamuraiContext()) {
         ResetContext(context);
-        context.Samurais.Add(Samurai_GK); //<--this should NOT make Quote added
+        context.Makers.Add(aMaker);
+        context.Samurais.Add(Samurai_GK);
+        context.SaveChanges();
+       
+      }
+    }
+
+    [TestMethod]
+    public void BackwardsCompatible_EagerLoadingWithImprovements() {
+      //Note: Explicit Loading is backlog for RTM
+      //using database for these tests so inmemory doesn't populate context
+      //Arrange
+      CreateAndSeedDbForEagerLoad();
+
+      //Act
+      using (var context=new SamuraiContext()) {
+        var samurai = context.Samurais.Include(s => s.Quotes)
+                                      .FirstOrDefault();
+        Assert.AreEqual(1, samurai.Quotes.Count);
+      }
+      using (var context = new SamuraiContext()) {
+        var samurai = context.Samurais.Include(s => s.Swords)
+                                  .Include(s => s.Quotes)
+                                  .FirstOrDefault();
+        Assert.AreEqual(1, samurai.Quotes.Count);
+        Assert.AreEqual(1, samurai.Swords.Count);
+      }
+
+
+      using (var context = new SamuraiContext()) {
+        var samurai = context.Samurais
+          .Include(s => s.Swords).ThenInclude(s => s.Maker)
+          .FirstOrDefault();
+
+        Assert.AreEqual(1, samurai.Swords.Count);
+        Assert.IsNotNull(samurai.Swords[0].Maker);
+   
+      }
+    }
+    [TestMethod, TestCategory("DisconnectedGraphs")]
+    public void BackwardsCompatible_DbSetAddAndAddRangeOnGraphs() {
+      InstantiateSamurais();
+      Samurai_GK.Quotes.Add(new Quote { Text = "oh my!" });
+      using (var context = new SamuraiContext(true)) {
+        ResetContext(context);
+        context.Samurais.Add(Samurai_GK);
+        context.SaveChanges();
+        Assert.AreEqual(1, context.Samurais.Count());
+        Assert.AreEqual(1, context.Quotes.Count());
+      }
+    }
+    [TestMethod, TestCategory("DisconnectedGraphs")]
+    public void New_DisconnectedPatterns_DbSetAdd_EnumToSpecifyRootOnly() {
+      InstantiateSamurais();
+      Samurai_GK.Quotes.Add(new Quote { Text = "oh my!" });
+      using (var context = new SamuraiContext(true)) {
+        ResetContext(context);
+        context.Samurais.Add(Samurai_GK, GraphBehavior.SingleObject); //<--this should NOT make Quote added
         context.SaveChanges();
         Assert.AreEqual(1, context.Samurais.Count());
         Assert.AreEqual(0, context.Quotes.Count());
       }
     }
 
-    [TestMethod]
+    [TestMethod, TestCategory("DisconnectedGraphs")]
+    public void New_DisconnectedPatterns_DbSetAddRange_EnumToSpecifyRootOnly() {
+      InstantiateSamurais();
+      Samurai_GK.Quotes.Add(new Quote { Text = "oh my!" });
+      using (var context = new SamuraiContext(true)) {
+        ResetContext(context);
+        context.Samurais.AddRange(new[] { Samurai_KK, Samurai_GK }, behavior: GraphBehavior.SingleObject);
+        context.SaveChanges();
+        Assert.AreEqual(2, context.Samurais.Count());
+        Assert.AreEqual(0, context.Quotes.Count());
+      }
+    }
+
+    [TestMethod, TestCategory("DisconnectedGraphs")]
     public void New_DisconnectedPatterns_EntryAdd_AddsRootOnly() {
       InstantiateSamurais();
       Samurai_GK.Quotes.Add(new Quote { Text = "oh my!" });
-      using (var context = new SamuraiContext()) {
+      using (var context = new SamuraiContext(true)) {
         ResetContext(context);
         context.Entry(Samurai_GK).State = EntityState.Added;
         context.SaveChanges();
@@ -96,7 +164,7 @@ namespace TestProject
 
     }
     [TestMethod]
-    public  void New_DisconnectedPatterns_AttachNewGraphViaChangeTracker() {
+    public void New_DisconnectedPatterns_AttachNewGraphViaChangeTracker() {
       InstantiateSamurais();
       Samurai_GK.Quotes.Add(new Quote { Text = "oh my!" });
       using (var context = new SamuraiContext()) {
