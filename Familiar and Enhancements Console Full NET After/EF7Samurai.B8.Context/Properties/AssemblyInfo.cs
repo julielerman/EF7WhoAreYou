@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EF7Samurai.Console")]
+[assembly: AssemblyTitle("EF7Samurai.B8.Context")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EF7Samurai.Console")]
+[assembly: AssemblyProduct("EF7Samurai.B8.Context")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d05ecceb-7904-4596-881c-51cf682690b7")]
+[assembly: Guid("24861343-93c5-4ebb-92b3-36bc0f4be3fc")]
 
 // Version information for an assembly consists of the following four values:
 //
