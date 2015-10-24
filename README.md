@@ -6,6 +6,8 @@ This talk was given at Boston Code Camp (March 21, 2015), Techorama (May 2015) a
 
 ****************************
 October 2015: Updated the Familiar & Enhancements solution to Beta 8. Removed Console App. Replaced with tests and added a few new ones. That solution uses .NET 4.6, not ASP.NET 5.
+
+Beta 8 represents a "feature complete" version of what will be the EF7 pre-release along with ASPNET5. It is still not for production.
 ****************************
 
 See Readme.txt files in individual demo folders for details about each demo.
