@@ -7,11 +7,8 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.CSharp": "4.0.0-beta-23019",
-          "System.Collections": "4.0.10-beta-23019",
           "System.Linq": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019"
+          "System.Runtime": "4.0.10-beta-23019"
         }
       },
       "EntityFramework.Commands/7.0.0-beta8": {
@@ -989,18 +986,6 @@
           "lib/net45/Microsoft.CodeAnalysis.CSharp.dll": {}
         }
       },
-      "Microsoft.CSharp/4.0.0-beta-23019": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp"
-        ],
-        "compile": {
-          "ref/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/_._": {}
-        }
-      },
       "Microsoft.Dnx.Compilation/1.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -1580,13 +1565,13 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
-      "System.Collections/4.0.10-beta-23019": {
+      "System.Collections/4.0.0": {
         "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.0.0-beta-23019"
-        },
         "compile": {
-          "ref/dotnet/System.Collections.dll": {}
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
         }
       },
       "System.Collections.Immutable/1.1.36": {
@@ -1744,17 +1729,7 @@
           "lib/net45/_._": {}
         }
       },
-      "System.Threading/4.0.10-beta-23019": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.0.0-beta-23019",
-          "System.Threading.Tasks": "4.0.0-beta-23019"
-        },
-        "compile": {
-          "ref/dotnet/System.Threading.dll": {}
-        }
-      },
-      "System.Threading.Tasks/4.0.0-beta-23019": {
+      "System.Threading/4.0.0": {
         "type": "package",
         "compile": {
           "ref/net45/_._": {}
@@ -1769,11 +1744,8 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.CSharp": "4.0.0-beta-23019",
-          "System.Collections": "4.0.10-beta-23019",
           "System.Linq": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019"
+          "System.Runtime": "4.0.10-beta-23019"
         }
       },
       "EntityFramework.Commands/7.0.0-beta8": {
@@ -4233,11 +4205,8 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.CSharp": "4.0.0-beta-23019",
-          "System.Collections": "4.0.10-beta-23019",
           "System.Linq": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019"
+          "System.Runtime": "4.0.10-beta-23019"
         }
       },
       "EntityFramework.Commands/7.0.0-beta8": {
@@ -5215,18 +5184,6 @@
           "lib/net45/Microsoft.CodeAnalysis.CSharp.dll": {}
         }
       },
-      "Microsoft.CSharp/4.0.0-beta-23019": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp"
-        ],
-        "compile": {
-          "ref/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/_._": {}
-        }
-      },
       "Microsoft.Dnx.Compilation/1.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -5806,13 +5763,13 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
-      "System.Collections/4.0.10-beta-23019": {
+      "System.Collections/4.0.0": {
         "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.0.0-beta-23019"
-        },
         "compile": {
-          "ref/dotnet/System.Collections.dll": {}
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
         }
       },
       "System.Collections.Immutable/1.1.36": {
@@ -5970,17 +5927,7 @@
           "lib/net45/_._": {}
         }
       },
-      "System.Threading/4.0.10-beta-23019": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.0.0-beta-23019",
-          "System.Threading.Tasks": "4.0.0-beta-23019"
-        },
-        "compile": {
-          "ref/dotnet/System.Threading.dll": {}
-        }
-      },
-      "System.Threading.Tasks/4.0.0-beta-23019": {
+      "System.Threading/4.0.0": {
         "type": "package",
         "compile": {
           "ref/net45/_._": {}
@@ -5995,11 +5942,8 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.CSharp": "4.0.0-beta-23019",
-          "System.Collections": "4.0.10-beta-23019",
           "System.Linq": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019"
+          "System.Runtime": "4.0.10-beta-23019"
         }
       },
       "EntityFramework.Commands/7.0.0-beta8": {
@@ -6977,18 +6921,6 @@
           "lib/net45/Microsoft.CodeAnalysis.CSharp.dll": {}
         }
       },
-      "Microsoft.CSharp/4.0.0-beta-23019": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp"
-        ],
-        "compile": {
-          "ref/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/_._": {}
-        }
-      },
       "Microsoft.Dnx.Compilation/1.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -7568,13 +7500,13 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
-      "System.Collections/4.0.10-beta-23019": {
+      "System.Collections/4.0.0": {
         "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.0.0-beta-23019"
-        },
         "compile": {
-          "ref/dotnet/System.Collections.dll": {}
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
         }
       },
       "System.Collections.Immutable/1.1.36": {
@@ -7732,17 +7664,7 @@
           "lib/net45/_._": {}
         }
       },
-      "System.Threading/4.0.10-beta-23019": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.0.0-beta-23019",
-          "System.Threading.Tasks": "4.0.0-beta-23019"
-        },
-        "compile": {
-          "ref/dotnet/System.Threading.dll": {}
-        }
-      },
-      "System.Threading.Tasks/4.0.0-beta-23019": {
+      "System.Threading/4.0.0": {
         "type": "package",
         "compile": {
           "ref/net45/_._": {}
@@ -7757,11 +7679,8 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.CSharp": "4.0.0-beta-23019",
-          "System.Collections": "4.0.10-beta-23019",
           "System.Linq": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019"
+          "System.Runtime": "4.0.10-beta-23019"
         }
       },
       "EntityFramework.Commands/7.0.0-beta8": {
@@ -10578,11 +10497,8 @@
         "type": "project",
         "framework": ".NETPlatform,Version=v5.0",
         "dependencies": {
-          "Microsoft.CSharp": "4.0.0-beta-23019",
-          "System.Collections": "4.0.10-beta-23019",
           "System.Linq": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019"
+          "System.Runtime": "4.0.10-beta-23019"
         }
       },
       "EntityFramework.Commands/7.0.0-beta8": {
@@ -14138,23 +14054,6 @@
         "ThirdPartyNotices.rtf"
       ]
     },
-    "Microsoft.CSharp/4.0.0-beta-23019": {
-      "type": "package",
-      "sha512": "TsYR8ylpBw89cxCTzA9eD8wqLR5u4TnNvUCLU7Qt9TlbxmNM0jPaz80L4N+W81kEoOpchlckGGCTA4JVemmEVA==",
-      "files": [
-        "lib/dotnet/Microsoft.CSharp.dll",
-        "lib/net45/_._",
-        "lib/netcore50/Microsoft.CSharp.dll",
-        "lib/win8/_._",
-        "Microsoft.CSharp.4.0.0-beta-23019.nupkg",
-        "Microsoft.CSharp.4.0.0-beta-23019.nupkg.sha512",
-        "Microsoft.CSharp.nuspec",
-        "ref/dotnet/Microsoft.CSharp.dll",
-        "ref/net45/_._",
-        "ref/netcore50/Microsoft.CSharp.dll",
-        "ref/win8/_._"
-      ]
-    },
     "Microsoft.CSharp/4.0.1-beta-23409": {
       "type": "package",
       "serviceable": true,
@@ -15215,18 +15114,51 @@
         "System.AppContext.nuspec"
       ]
     },
-    "System.Collections/4.0.10-beta-23019": {
+    "System.Collections/4.0.0": {
       "type": "package",
-      "sha512": "76/FZ9wYhhU6wdNwrB3NiVJ5lpLZnLhS3dbLCOXOSf8NN3KXPrlcm5f2PUeHSJxgu5nP2H8lGLfshIaWq2qSNQ==",
+      "sha512": "i2vsGDIEbWdHcUSNDPKZP/ZWod6o740el7mGTCy0dqbCxQh74W4QoC+klUwPEtGEFuvzJ7bJgvwJqscosVNyZQ==",
       "files": [
-        "lib/DNXCore50/System.Collections.dll",
-        "lib/net46/_._",
-        "lib/netcore50/System.Collections.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "License.rtf",
+        "ref/dotnet/de/System.Collections.xml",
+        "ref/dotnet/es/System.Collections.xml",
+        "ref/dotnet/fr/System.Collections.xml",
+        "ref/dotnet/it/System.Collections.xml",
+        "ref/dotnet/ja/System.Collections.xml",
+        "ref/dotnet/ko/System.Collections.xml",
+        "ref/dotnet/ru/System.Collections.xml",
         "ref/dotnet/System.Collections.dll",
-        "ref/net46/_._",
-        "runtimes/win8-aot/lib/netcore50/System.Collections.dll",
-        "System.Collections.4.0.10-beta-23019.nupkg",
-        "System.Collections.4.0.10-beta-23019.nupkg.sha512",
+        "ref/dotnet/System.Collections.xml",
+        "ref/dotnet/zh-hans/System.Collections.xml",
+        "ref/dotnet/zh-hant/System.Collections.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/de/System.Collections.xml",
+        "ref/netcore50/es/System.Collections.xml",
+        "ref/netcore50/fr/System.Collections.xml",
+        "ref/netcore50/it/System.Collections.xml",
+        "ref/netcore50/ja/System.Collections.xml",
+        "ref/netcore50/ko/System.Collections.xml",
+        "ref/netcore50/ru/System.Collections.xml",
+        "ref/netcore50/System.Collections.dll",
+        "ref/netcore50/System.Collections.xml",
+        "ref/netcore50/zh-hans/System.Collections.xml",
+        "ref/netcore50/zh-hant/System.Collections.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.Collections.4.0.0.nupkg",
+        "System.Collections.4.0.0.nupkg.sha512",
         "System.Collections.nuspec"
       ]
     },
@@ -17575,18 +17507,51 @@
         "System.Text.RegularExpressions.nuspec"
       ]
     },
-    "System.Threading/4.0.10-beta-23019": {
+    "System.Threading/4.0.0": {
       "type": "package",
-      "sha512": "xJYu7J22Fc4G7pfUlPBYuRj4Rla0VkaqU77SW2DyT/oMq1KQmmR7oQnQ7yq/yig0St17I7rYZYBbSrNbe1l5+g==",
+      "sha512": "H6O/9gUrjPDNYanh/7OFGAZHjVXvEuITD0RcnjfvIV04HOGrOPqUBU0kmz9RIX/7YGgCQn1o1S2DX6Cuv8kVGQ==",
       "files": [
-        "lib/DNXCore50/System.Threading.dll",
-        "lib/net46/_._",
-        "lib/netcore50/System.Threading.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "License.rtf",
+        "ref/dotnet/de/System.Threading.xml",
+        "ref/dotnet/es/System.Threading.xml",
+        "ref/dotnet/fr/System.Threading.xml",
+        "ref/dotnet/it/System.Threading.xml",
+        "ref/dotnet/ja/System.Threading.xml",
+        "ref/dotnet/ko/System.Threading.xml",
+        "ref/dotnet/ru/System.Threading.xml",
         "ref/dotnet/System.Threading.dll",
-        "ref/net46/_._",
-        "runtimes/win8-aot/lib/netcore50/System.Threading.dll",
-        "System.Threading.4.0.10-beta-23019.nupkg",
-        "System.Threading.4.0.10-beta-23019.nupkg.sha512",
+        "ref/dotnet/System.Threading.xml",
+        "ref/dotnet/zh-hans/System.Threading.xml",
+        "ref/dotnet/zh-hant/System.Threading.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/de/System.Threading.xml",
+        "ref/netcore50/es/System.Threading.xml",
+        "ref/netcore50/fr/System.Threading.xml",
+        "ref/netcore50/it/System.Threading.xml",
+        "ref/netcore50/ja/System.Threading.xml",
+        "ref/netcore50/ko/System.Threading.xml",
+        "ref/netcore50/ru/System.Threading.xml",
+        "ref/netcore50/System.Threading.dll",
+        "ref/netcore50/System.Threading.xml",
+        "ref/netcore50/zh-hans/System.Threading.xml",
+        "ref/netcore50/zh-hant/System.Threading.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.Threading.4.0.0.nupkg",
+        "System.Threading.4.0.0.nupkg.sha512",
         "System.Threading.nuspec"
       ]
     },
@@ -17635,22 +17600,6 @@
         "System.Threading.Overlapped.4.0.0.nupkg",
         "System.Threading.Overlapped.4.0.0.nupkg.sha512",
         "System.Threading.Overlapped.nuspec"
-      ]
-    },
-    "System.Threading.Tasks/4.0.0-beta-23019": {
-      "type": "package",
-      "sha512": "frcOMzzaVN9AHhlJRLKOqm9WHws2byLa+CDFUZIQzUWqrpubH0CDtNj1je5lJpD1QDwJBmnXepKUXCwt/wt9Ew==",
-      "files": [
-        "lib/net45/_._",
-        "lib/win8/_._",
-        "License.rtf",
-        "ref/dotnet/System.Threading.Tasks.dll",
-        "ref/net45/_._",
-        "ref/netcore50/System.Threading.Tasks.dll",
-        "ref/win8/_._",
-        "System.Threading.Tasks.4.0.0-beta-23019.nupkg",
-        "System.Threading.Tasks.4.0.0-beta-23019.nupkg.sha512",
-        "System.Threading.Tasks.nuspec"
       ]
     },
     "System.Threading.Tasks/4.0.11-beta-23409": {
@@ -17875,8 +17824,8 @@
       "Microsoft.AspNet.Server.WebListener >= 1.0.0-beta8",
       "Microsoft.AspNet.StaticFiles >= 1.0.0-beta8",
       "EntityFramework.SqlServer >= 7.0.0-beta8",
-      "EF7Samurai.Domain >= 1.0.0-*",
-      "EntityFramework.Commands >= 7.0.0-beta8"
+      "EntityFramework.Commands >= 7.0.0-beta8",
+      "EF7Samurai.Domain >= 1.0.0-*"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": []
