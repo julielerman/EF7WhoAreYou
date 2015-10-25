@@ -6,16 +6,6 @@ make sure entityframework.commands  is installed and in project.json (already ok
 make sure beta8 is the default with : dnvm use 1.0.0-beta8
 
 
-dnx ef  (will list ef commands)
-dnx ef [command] --help    (will list details of command)
-ef database
-	ef database update  [migration] -c [contextname]
-ef dbcontext
-    ef dbcontext list
-	ef dbcontext scaffold
-ef migrations
-
-dnx ef migrations will list ef migraitons commands
 
 Mucking with domain package json to resolve duplicate assembly problem with collecitons & threading 
 
@@ -34,3 +24,20 @@ Original:
   Installing the beta8 web tools made this problem disappear.
 
   note json options in startup to deal with circular refs when returning graphs
+
+  -------------------------------
+  migrations
+
+  cd into proper folder
+
+
+  dnx ef  (will list ef commands)
+dnx ef [command] --help    (will list details of command)
+ef database
+	ef database update  [migration] -c [contextname]
+ef dbcontext
+    ef dbcontext list
+	ef dbcontext scaffold
+ef migrations
+
+dnx ef migrations will list ef migraitons commands
