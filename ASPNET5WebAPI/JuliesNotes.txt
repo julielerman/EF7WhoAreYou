@@ -30,3 +30,7 @@ Original:
 
   REMOVED collections, threading and csharp.
   Had to dnurestore first in the domain project and then in the web api project
+
+  Installing the beta8 web tools made this problem disappear.
+
+  note json options in startup to deal with circular refs when returning graphs
