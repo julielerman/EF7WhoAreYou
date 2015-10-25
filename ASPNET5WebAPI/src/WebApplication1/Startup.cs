@@ -21,7 +21,7 @@ namespace WebApplication1
         // Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
-      var connection = @"Server = (localdb)\mssqllocaldb; Database=EF7Samurai; Trusted_Connection=True; MultipleActiveResultSets = True;";
+      var connection = @"Server = (localdb)\mssqllocaldb; Database=EF7SamuraiASPNET5; Trusted_Connection=True; MultipleActiveResultSets = True;";
       services.AddEntityFramework()
               .AddSqlServer()
               .AddDbContext<SamuraiContext>(options => options.UseSqlServer(connection));
