@@ -17,15 +17,14 @@ namespace ASPNET5WebAPI.Controllers
   [Route("api/[controller]")]
   public class SamuraiController : Controller
   {
-    [FromServices]
-    public SamuraiContext SamuraiContext { get; set; }
-
-    [FromServices]
-    public ILogger<SamuraiController> Logger { get; set; }
-
+    private SamuraiContext _context;
+    public SamuraiController(SamuraiContext context) {
+      _context = context;
+    }
+   
     [HttpGet]
     public IActionResult Get() {
-      var samurais= SamuraiContext.Samurais.Include(s => s.Quotes).ToList();
+      var samurais= _context.Samurais.Include(s => s.Quotes).ToList();
        return new ObjectResult(samurais);
      
      
@@ -33,7 +32,7 @@ namespace ASPNET5WebAPI.Controllers
 
     [HttpGet("{id:int}", Name = "GetByIdRoute")]
     public IActionResult GetById(int id) {
-      var samurai = SamuraiContext.Samurais.FirstOrDefault(s => s.Id == id);
+      var samurai = _context.Samurais.FirstOrDefault(s => s.Id == id);
       if (samurai == null) {
         return HttpNotFound();
       }

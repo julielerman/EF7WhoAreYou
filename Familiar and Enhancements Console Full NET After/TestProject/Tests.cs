@@ -40,6 +40,11 @@ namespace TestProject
 
       }
     }
+    [TestMethod]
+    public void ShowBatchCrud() {
+      CreateAndSeedDbForEagerLoad();
+    }
+
 
     [TestMethod]
     public void BackwardsCompatible_BasicLinqQueryingStillWorks() {
@@ -75,7 +80,7 @@ namespace TestProject
         context.Makers.Add(aMaker);
         context.Samurais.Add(Samurai_GK);
         context.SaveChanges();
-       
+
       }
     }
 
@@ -87,7 +92,7 @@ namespace TestProject
       CreateAndSeedDbForEagerLoad();
 
       //Act
-      using (var context=new SamuraiContext()) {
+      using (var context = new SamuraiContext()) {
         var samurai = context.Samurais.Include(s => s.Quotes)
                                       .FirstOrDefault();
         Assert.AreEqual(1, samurai.Quotes.Count);
@@ -108,7 +113,7 @@ namespace TestProject
 
         Assert.AreEqual(1, samurai.Swords.Count);
         Assert.IsNotNull(samurai.Swords[0].Maker);
-   
+
       }
     }
     [TestMethod, TestCategory("DisconnectedGraphs")]
@@ -205,7 +210,36 @@ namespace TestProject
     Samurai Samurai_HH;
     Samurai Samurai_KZ;
     Samurai Samurai_GK;
+
+    private enum ProviderType
+    {
+      InMemory,
+      SqlServer
+
+    }
+
+    private DbContextOptionsBuilder InMemoryOptions(ProviderType type) {
+      var ob = new DbContextOptionsBuilder();
+
+      switch (type) {
+        case ProviderType.InMemory:
+          ob.UseInMemoryDatabase();
+
+          break;
+        case ProviderType.SqlServer:
+          ob.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database=EF7SamuraiConsole; Trusted_Connection=True; MultipleActiveResultSets = True;")
+           .MaxBatchSize(40);
+          break;
+        default:
+          break;
+      }
+
+      return ob;
+
+    }
   }
 }
+
+
 
 
