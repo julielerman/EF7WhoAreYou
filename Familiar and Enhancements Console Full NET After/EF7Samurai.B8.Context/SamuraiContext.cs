@@ -18,33 +18,30 @@ namespace EF7Samurai.Context
       : base() { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-      //if (_useInMemory) {
-      //  optionsBuilder.UseInMemoryDatabase();
-      //  return;
-      //}
-      if (optionsBuilder == null) {
-        optionsBuilder
+      if (_useInMemory) {
+        optionsBuilder.UseInMemoryDatabase();
+        return;
+      }
+         optionsBuilder
            .UseSqlServer("Server = (localdb)\\mssqllocaldb; Database=EF7SamuraiConsole; Trusted_Connection=True; MultipleActiveResultSets = True;")
            .MaxBatchSize(40);
-      }
-
-
+ 
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
       modelBuilder.Entity<Maker>()
         .HasMany(m => m.Swords)
         .WithOne(s => s.Maker);
 
-      modelBuilder.Entity<Samurai>()
-        .HasAlternateKey(s => s.AlternateKey);
+      //modelBuilder.Entity<Samurai>()
+      //  .HasAlternateKey(s => s.AlternateKey);
 
       base.OnModelCreating(modelBuilder);
     }
     public SamuraiContext() {
 
     }
-    //public SamuraiContext(bool useInMemory) {
-    //  _useInMemory = useInMemory;
-    //}
+    public SamuraiContext(bool useInMemory) {
+      _useInMemory = useInMemory;
+    }
   }
 }
