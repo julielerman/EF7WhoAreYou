@@ -3,14 +3,15 @@ using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
-using EF7Samurai.Context;
+using ASPNET5WebAPI.Model;
 
-namespace EF7Samurai.B8.Context.Migrations
+namespace EF7WebAPI.Migrations
 {
     [DbContext(typeof(SamuraiContext))]
-    partial class SamuraiContextModelSnapshot : ModelSnapshot
+    [Migration("20151025140327_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .Annotation("ProductVersion", "7.0.0-beta8-15964")
@@ -68,8 +69,6 @@ namespace EF7Samurai.B8.Context.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<Guid>("AlternateKey");
 
                     b.Property<string>("Name");
 

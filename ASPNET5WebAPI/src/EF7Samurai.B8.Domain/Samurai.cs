@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace EF7Samurai.Domain
 {
@@ -15,7 +14,7 @@ namespace EF7Samurai.Domain
     public List<SamuraiBattle> SamuraiBattles { get; set; }
     public List<Quote> Quotes { get; set; }
     public List<Sword> Swords { get; set; }
-   // public Guid AlternateKey { get; set; }
+
 
   }
 }

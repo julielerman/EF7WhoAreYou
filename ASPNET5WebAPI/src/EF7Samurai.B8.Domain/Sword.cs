@@ -13,6 +13,5 @@ namespace EF7Samurai.Domain
     public int MakerId { get; set; }
     public Maker Maker { get; set; }
     public int SamuraId { get; set; }
-  
   }
 }

@@ -1,0 +1,1 @@
+ Scaffold-DbContext -Connection "Server = (localdb)\mssqllocaldb; Database=EF7Samurai; Trusted_Connection=True;" -Provider "entityframework.sqlserver" -ContextClassName "testcontext" -OutputDirectory "TestRE2" -FluentApi 

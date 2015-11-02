@@ -3,9 +3,9 @@ using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
-using EF7Samurai.Context;
+using ASPNET5WebAPI.Model;
 
-namespace EF7Samurai.B8.Context.Migrations
+namespace EF7WebAPI.Migrations
 {
     [DbContext(typeof(SamuraiContext))]
     partial class SamuraiContextModelSnapshot : ModelSnapshot
@@ -68,8 +68,6 @@ namespace EF7Samurai.B8.Context.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<Guid>("AlternateKey");
 
                     b.Property<string>("Name");
 

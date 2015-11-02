@@ -10,9 +10,9 @@ namespace TestProject
 
   [TestClass]
 
-  public class FunctionalTests
-  {
+  public class InMemoryTests
 
+  {
     [TestMethod]
     public void BackwardsCompatible_DbSetAddAndAddRangeOnSingleObjects() {
       InstantiateSamurais();
@@ -40,6 +40,7 @@ namespace TestProject
 
       }
     }
+  
 
     [TestMethod]
     public void BackwardsCompatible_BasicLinqQueryingStillWorks() {
@@ -65,53 +66,9 @@ namespace TestProject
       }
     }
 
-    private void CreateAndSeedDbForEagerLoad() {
-      InstantiateSamurais();
-      Samurai_GK.Quotes.Add(new Quote { Text = "oh my!" });
-      var aMaker = new Maker { Name = "A Maker" };
-      Samurai_GK.Swords.Add(new Sword { Maker = aMaker, WeightGrams = 100 });
-      using (var context = new SamuraiContext()) {
-        ResetContext(context);
-        context.Makers.Add(aMaker);
-        context.Samurais.Add(Samurai_GK);
-        context.SaveChanges();
-       
-      }
-    }
+  
 
-    [TestMethod]
-    public void BackwardsCompatible_EagerLoadingWithImprovements() {
-      //Note: Explicit Loading is backlog for RTM
-      //using database for these tests so inmemory doesn't populate context
-      //Arrange
-      CreateAndSeedDbForEagerLoad();
-
-      //Act
-      using (var context=new SamuraiContext()) {
-        var samurai = context.Samurais.Include(s => s.Quotes)
-                                      .FirstOrDefault();
-        Assert.AreEqual(1, samurai.Quotes.Count);
-      }
-      using (var context = new SamuraiContext()) {
-        var samurai = context.Samurais.Include(s => s.Swords)
-                                  .Include(s => s.Quotes)
-                                  .FirstOrDefault();
-        Assert.AreEqual(1, samurai.Quotes.Count);
-        Assert.AreEqual(1, samurai.Swords.Count);
-      }
-
-
-      using (var context = new SamuraiContext()) {
-        var samurai = context.Samurais
-          .Include(s => s.Swords).ThenInclude(s => s.Maker)
-          .FirstOrDefault();
-
-        Assert.AreEqual(1, samurai.Swords.Count);
-        Assert.IsNotNull(samurai.Swords[0].Maker);
-   
-      }
-    }
-    [TestMethod, TestCategory("DisconnectedGraphs")]
+   [TestMethod, TestCategory("DisconnectedGraphs")]
     public void BackwardsCompatible_DbSetAddAndAddRangeOnGraphs() {
       InstantiateSamurais();
       Samurai_GK.Quotes.Add(new Quote { Text = "oh my!" });
@@ -161,22 +118,8 @@ namespace TestProject
         Assert.AreEqual(0, context.Quotes.Count());
 
       }
-
     }
-    [TestMethod]
-    public void New_DisconnectedPatterns_AttachNewGraphViaChangeTracker() {
-      InstantiateSamurais();
-      Samurai_GK.Quotes.Add(new Quote { Text = "oh my!" });
-      using (var context = new SamuraiContext()) {
-        ResetContext(context);
-        context.ChangeTracker.TrackGraph(Samurai_GK,
-          e => e.Entry.State = EntityState.Added);
-        context.SaveChanges();
-        Assert.AreEqual(1, context.Samurais.Count());
-        Assert.AreEqual(1, context.Quotes.Count());
-      }
-    }
-
+   
 
 
 
@@ -187,6 +130,7 @@ namespace TestProject
     private void ResetContext(SamuraiContext context) {
       context.Database.EnsureDeleted();
       context.Database.EnsureCreated();
+     
     }
 
     private void InstantiateSamurais() {
@@ -208,5 +152,7 @@ namespace TestProject
     Samurai Samurai_GK;
   }
 }
+
+
 
 
