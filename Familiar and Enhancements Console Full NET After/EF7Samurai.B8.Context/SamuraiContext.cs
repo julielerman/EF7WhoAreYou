@@ -12,6 +12,7 @@ namespace EF7Samurai.Context
     public DbSet<Battle> Battles { get; set; }
     public DbSet<Quote> Quotes { get; set; }
     public DbSet<Maker> Makers { get; set; }
+    public DbSet<SecretIdentity> Secrets { get; set; }
 
 
     public SamuraiContext(DbContextOptionsBuilder optionsBuilder)
@@ -31,6 +32,10 @@ namespace EF7Samurai.Context
       modelBuilder.Entity<Maker>()
         .HasMany(m => m.Swords)
         .WithOne(s => s.Maker);
+     // modelBuilder.Entity<SecretIdentity>().HasKey(s => s.SamuraiId);
+      //modelBuilder.Entity<Samurai>()
+      //  .HasOne(s => s.SecretIdentity)
+      //  .WithOne(i => i.Samurai);
 
       //modelBuilder.Entity<Samurai>()
       //  .HasAlternateKey(s => s.AlternateKey);

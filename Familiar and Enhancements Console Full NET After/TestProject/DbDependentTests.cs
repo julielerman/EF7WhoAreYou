@@ -78,8 +78,62 @@ namespace TestProject
       }
     }
 
+    [TestMethod, TestCategory("DisconnectedGraphs")]
+    public void BackwardsCompatible_DbSetAddToCollectionOnGraphs() {
+      InstantiateSamurais();
+      Samurai_GK.Quotes.Add(new Quote { Text = "oh my!" });
+      using (var context = new SamuraiContext()) {
+        ResetContext(context);
+        context.Samurais.Add(Samurai_GK);
+        context.SaveChanges();
+        Assert.AreEqual(1, context.Samurais.Count());
+        Assert.AreEqual(1, context.Quotes.Count());
+      }
+    }
 
+    [TestMethod, TestCategory("DisconnectedGraphs")]
+    public void New_DbSetAdd_IgnoresPrincipalOnGraphs() {
+      InstantiateSamurais();
+     
+        var quote=new Quote { Text = "oh my!" };
+      quote.Samurai = Samurai_GK;
+      using (var context = new SamuraiContext()) {
+        ResetContext(context);
+        context.Quotes.Add(quote, GraphBehavior.IncludeDependents);
+        context.SaveChanges();
+        Assert.AreEqual(1, context.Samurais.Count());
+        Assert.AreEqual(1, context.Quotes.Count());
+      }
+    }
+    [TestMethod, TestCategory("DisconnectedGraphs")]
+    public void New_DbSetAdd_OneToOneIncludesDependentOnGraphs() {
+      InstantiateSamurais();
 
+      var secret = new SecretIdentity { RealName = "James Bond" };
+      Samurai_GK.SecretIdentity = secret;
+      using (var context = new SamuraiContext()) {
+        ResetContext(context);
+        context.Samurais.Add(Samurai_GK, GraphBehavior.IncludeDependents);
+        context.SaveChanges();
+        Assert.AreEqual(1, context.Samurais.Count());
+        Assert.AreEqual(1, context.Secrets.Count());
+      }
+    }
+
+    [TestMethod, TestCategory("DisconnectedGraphs")]
+    public void New_DbSetAdd_OneToOneIncludePrincipalOnGraphs() {
+      InstantiateSamurais();
+
+      var secret = new SecretIdentity { RealName = "James Bond" };
+      Samurai_GK.SecretIdentity = secret;
+      using (var context = new SamuraiContext()) {
+        ResetContext(context);
+        context.Secrets.Add(secret, GraphBehavior.IncludeDependents);
+        context.SaveChanges();
+        Assert.AreEqual(1, context.Samurais.Count());
+        Assert.AreEqual(1, context.Secrets.Count());
+      }
+    }
     private void ResetContext(SamuraiContext context) {
       context.Database.EnsureDeleted();
       context.Database.Migrate();

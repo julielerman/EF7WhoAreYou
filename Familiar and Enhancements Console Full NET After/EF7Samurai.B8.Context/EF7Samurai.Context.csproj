@@ -155,6 +155,10 @@
     <Compile Include="Migrations\20151028190058_SwordsMakersAndManyToMany.designer.cs">
       <DependentUpon>20151028190058_SwordsMakersAndManyToMany.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20151111184252_AddSecretIdentity.cs" />
+    <Compile Include="Migrations\20151111184252_AddSecretIdentity.designer.cs">
+      <DependentUpon>20151111184252_AddSecretIdentity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\SamuraiContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SamuraiContext.cs" />
