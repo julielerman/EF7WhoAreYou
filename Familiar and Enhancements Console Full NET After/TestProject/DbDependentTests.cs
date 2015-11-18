@@ -92,7 +92,8 @@ namespace TestProject
     }
 
     [TestMethod, TestCategory("DisconnectedGraphs")]
-    public void New_DbSetAdd_IgnoresPrincipalOnGraphs() {
+    [ExpectedException(typeof(DbUpdateException))]
+    public void New_DbSetAdd_ThrowsBecausePrincipalIsIgnoredInGraph() {
       InstantiateSamurais();
      
         var quote=new Quote { Text = "oh my!" };
@@ -101,8 +102,6 @@ namespace TestProject
         ResetContext(context);
         context.Quotes.Add(quote, GraphBehavior.IncludeDependents);
         context.SaveChanges();
-        Assert.AreEqual(1, context.Samurais.Count());
-        Assert.AreEqual(1, context.Quotes.Count());
       }
     }
     [TestMethod, TestCategory("DisconnectedGraphs")]
@@ -121,7 +120,8 @@ namespace TestProject
     }
 
     [TestMethod, TestCategory("DisconnectedGraphs")]
-    public void New_DbSetAdd_OneToOneIncludePrincipalOnGraphs() {
+    [ExpectedException(typeof(DbUpdateException))]
+    public void New_DbSetAdd_ThrowsBecauseOneToOneDoesNotIncludePrincipalOnGraphs() {
       InstantiateSamurais();
 
       var secret = new SecretIdentity { RealName = "James Bond" };
@@ -130,8 +130,6 @@ namespace TestProject
         ResetContext(context);
         context.Secrets.Add(secret, GraphBehavior.IncludeDependents);
         context.SaveChanges();
-        Assert.AreEqual(1, context.Samurais.Count());
-        Assert.AreEqual(1, context.Secrets.Count());
       }
     }
     private void ResetContext(SamuraiContext context) {

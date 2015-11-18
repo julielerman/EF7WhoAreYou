@@ -83,6 +83,7 @@ namespace TestProject
     [TestMethod, TestCategory("DisconnectedGraphs")]
     public void New_DisconnectedPatterns_DbSetAdd_EnumToSpecifyRootOnly() {
       InstantiateSamurais();
+
       Samurai_GK.Quotes.Add(new Quote { Text = "oh my!" });
       using (var context = new SamuraiContext(true)) {
         ResetContext(context);
