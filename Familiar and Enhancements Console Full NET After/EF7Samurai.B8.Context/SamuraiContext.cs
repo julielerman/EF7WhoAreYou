@@ -32,11 +32,7 @@ namespace EF7Samurai.Context
       modelBuilder.Entity<Maker>()
         .HasMany(m => m.Swords)
         .WithOne(s => s.Maker);
-     // modelBuilder.Entity<SecretIdentity>().HasKey(s => s.SamuraiId);
-      //modelBuilder.Entity<Samurai>()
-      //  .HasOne(s => s.SecretIdentity)
-      //  .WithOne(i => i.Samurai);
-
+     
       //modelBuilder.Entity<Samurai>()
       //  .HasAlternateKey(s => s.AlternateKey);
 
