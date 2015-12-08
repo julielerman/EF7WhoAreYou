@@ -6,17 +6,13 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>8db3485e-00a2-4a5c-9f83-258c641f0d6e</ProjectGuid>
-    <RootNamespace>WebApplication1</RootNamespace>
+    <ProjectGuid>83546e0b-a549-44e6-8682-6389a8f7efd6</ProjectGuid>
+    <RootNamespace>EF7Samurai.Domain</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">..\..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">..\..\artifacts\bin\$(MSBuildProjectName)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <DevelopmentServerPort>51084</DevelopmentServerPort>
   </PropertyGroup>
-  <ItemGroup>
-    <DnxInvisibleCompile Include="StartupOrig.cs" />
-  </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>

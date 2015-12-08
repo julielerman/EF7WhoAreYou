@@ -4,55 +4,55 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.Logging;
-using ASPNET5WebAPI.Model;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Data.Entity;
+using EF7Samurai.Model;
 
 namespace WebApplication1
 {
-    public class Startup
-    {
-        public Startup(IHostingEnvironment env)
-        {
-        }
+  public class Startup
+  {
+    public Startup(IHostingEnvironment env) {
+      // Set up configuration sources.
+      var builder = new ConfigurationBuilder()
+          .AddJsonFile("appsettings.json")
+          .AddEnvironmentVariables();
+      Configuration = builder.Build();
+    }
 
-        // This method gets called by a runtime.
-        // Use this method to add services to the container
-        public void ConfigureServices(IServiceCollection services)
-        {
-      var connection = @"Server = (localdb)\mssqllocaldb; Database=EF7Samurai; Trusted_Connection=True; MultipleActiveResultSets = True;";
+    public IConfigurationRoot Configuration { get; set; }
+
+    // This method gets called by the runtime. Use this method to add services to the container.
+    public void ConfigureServices(IServiceCollection services) {
+      // Add framework services.
       services.AddEntityFramework()
-              .AddSqlServer()
-              .AddDbContext<SamuraiContext>(options => options.UseSqlServer(connection));
-
-      services.AddMvc().AddJsonOptions(options =>
+        .AddSqlServer()
+        .AddDbContext<SamuraiContext>(options => options.UseSqlServer(Configuration["Data:SamuraiConnection:ConnectionString"]));
+      services.AddScoped<NonTrackingDataWrapper>();
+   
+      services.AddMvc()
+        .AddJsonOptions(options =>
       {
         //elegant handling of circular references
         options.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All;
       }); ;
-            // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
-            // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
-            // services.AddWebApiConventions();
-        }
-
-        // Configure is called after ConfigureServices is called.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
-        {
-            loggerFactory.MinimumLevel = LogLevel.Information;
-            loggerFactory.AddConsole();
-            loggerFactory.AddDebug();
-
-            // Add the platform handler to the request pipeline.
-            app.UseIISPlatformHandler();
-
-            // Configure the HTTP request pipeline.
-            app.UseStaticFiles();
-
-            // Add MVC to the request pipeline.
-            app.UseMvc();
-            // Add the following route for porting Web API 2 controllers.
-            // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
-        }
     }
+
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) {
+      loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+      loggerFactory.AddDebug();
+
+      app.UseIISPlatformHandler();
+
+      app.UseStaticFiles();
+
+      app.UseMvc();
+    }
+
+    // Entry point for the application.
+    public static void Main(string[] args) => WebApplication.Run<Startup>(args);
+  }
 }

@@ -11,9 +11,10 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/Samurais",
       "environmentVariables": {
-        "ASPNET_ENV": "Development"
+        "ASPNET_ENV": "Development",
+        "Hosting:Environment": "Development"
       }
     },
     "web": {
