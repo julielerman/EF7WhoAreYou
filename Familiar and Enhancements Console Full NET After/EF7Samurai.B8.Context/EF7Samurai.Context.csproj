@@ -31,36 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework.Commands, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.Commands.7.0.0-beta8\lib\net45\EntityFramework.Commands.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.Core, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.Core.7.0.0-beta8\lib\net45\EntityFramework.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.InMemory, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.InMemory.7.0.0-beta8\lib\net45\EntityFramework.InMemory.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.Relational, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.Relational.7.0.0-beta8\lib\net45\EntityFramework.Relational.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.Relational.Design, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.Relational.Design.7.0.0-beta8\lib\net45\EntityFramework.Relational.Design.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.SqlServer.7.0.0-beta8\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer.Design, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.SqlServer.Design.7.0.0-beta8\lib\net45\EntityFramework.SqlServer.Design.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Razor, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.4.0.0-beta8\lib\net45\Microsoft.AspNet.Razor.dll</HintPath>
+    <Reference Include="Microsoft.AspNet.Razor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.4.0.0-rc1-final\lib\net451\Microsoft.AspNet.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -120,7 +92,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Remotion.Linq, Version=2.0.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Remotion.Linq.2.0.0-beta-002\lib\net45\Remotion.Linq.dll</HintPath>
+      <HintPath>..\packages\Remotion.Linq.2.0.1\lib\net45\Remotion.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -147,29 +119,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20151021203934_Initial.cs" />
-    <Compile Include="Migrations\20151021203934_Initial.designer.cs">
-      <DependentUpon>20151021203934_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20151023195617_TestingBattlesNav.cs" />
-    <Compile Include="Migrations\20151023195617_TestingBattlesNav.designer.cs">
-      <DependentUpon>20151023195617_TestingBattlesNav.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20151028190058_SwordsMakersAndManyToMany.cs" />
-    <Compile Include="Migrations\20151028190058_SwordsMakersAndManyToMany.designer.cs">
-      <DependentUpon>20151028190058_SwordsMakersAndManyToMany.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20151111184252_AddSecretIdentity.cs" />
-    <Compile Include="Migrations\20151111184252_AddSecretIdentity.designer.cs">
-      <DependentUpon>20151111184252_AddSecretIdentity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\SamuraiContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SamuraiContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EF7Samurai.Domain\EF7Samurai.Domain.csproj">
@@ -180,6 +137,9 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0-beta1-20150812-01\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0-beta1-20150812-01\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

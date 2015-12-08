@@ -16,7 +16,8 @@ namespace EF7Samurai.Domain
     public List<Quote> Quotes { get; set; }
     public List<Sword> Swords { get; set; }
     public SecretIdentity SecretIdentity { get; set; }
-           // public Guid AlternateKey { get; set; }
+    public string NewString { get; set; }
+                                       // public Guid AlternateKey { get; set; }
 
   }
 }

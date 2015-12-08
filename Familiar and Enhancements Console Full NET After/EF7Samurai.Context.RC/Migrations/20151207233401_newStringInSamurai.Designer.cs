@@ -5,17 +5,17 @@ using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
 using EF7Samurai.Context;
 
-namespace EF7Samurai.B8.Context.Migrations
+namespace EF7Samurai.Context.RC.Migrations
 {
     [DbContext(typeof(SamuraiContext))]
-    [Migration("20151111184252_AddSecretIdentity")]
-    partial class AddSecretIdentity
+    [Migration("20151207233401_newStringInSamurai")]
+    partial class newStringInSamurai
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .Annotation("ProductVersion", "7.0.0-beta8-15964")
-                .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("EF7Samurai.Domain.Battle", b =>
                 {
@@ -72,6 +72,8 @@ namespace EF7Samurai.B8.Context.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<string>("NewString");
+
                     b.HasKey("Id");
                 });
 
@@ -121,43 +123,43 @@ namespace EF7Samurai.B8.Context.Migrations
                 {
                     b.HasOne("EF7Samurai.Domain.Location")
                         .WithMany()
-                        .ForeignKey("LocationId");
+                        .HasForeignKey("LocationId");
                 });
 
             modelBuilder.Entity("EF7Samurai.Domain.Quote", b =>
                 {
                     b.HasOne("EF7Samurai.Domain.Samurai")
                         .WithMany()
-                        .ForeignKey("SamuraiId");
+                        .HasForeignKey("SamuraiId");
                 });
 
             modelBuilder.Entity("EF7Samurai.Domain.SamuraiBattle", b =>
                 {
                     b.HasOne("EF7Samurai.Domain.Battle")
                         .WithMany()
-                        .ForeignKey("BattleId");
+                        .HasForeignKey("BattleId");
 
                     b.HasOne("EF7Samurai.Domain.Samurai")
                         .WithMany()
-                        .ForeignKey("SamuraiId");
+                        .HasForeignKey("SamuraiId");
                 });
 
             modelBuilder.Entity("EF7Samurai.Domain.SecretIdentity", b =>
                 {
                     b.HasOne("EF7Samurai.Domain.Samurai")
                         .WithOne()
-                        .ForeignKey("EF7Samurai.Domain.SecretIdentity", "SamuraiId");
+                        .HasForeignKey("EF7Samurai.Domain.SecretIdentity", "SamuraiId");
                 });
 
             modelBuilder.Entity("EF7Samurai.Domain.Sword", b =>
                 {
                     b.HasOne("EF7Samurai.Domain.Maker")
                         .WithMany()
-                        .ForeignKey("MakerId");
+                        .HasForeignKey("MakerId");
 
                     b.HasOne("EF7Samurai.Domain.Samurai")
                         .WithMany()
-                        .ForeignKey("SamuraiId");
+                        .HasForeignKey("SamuraiId");
                 });
         }
     }
