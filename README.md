@@ -5,6 +5,8 @@ Demos and PowerPoints for Julie Lerman's "EF7: Who are you and what have you don
 This talk was given at Boston Code Camp (March 21, 2015), Techorama (May 2015) and DevSum15 (May 2015).
 
 ****************************
+December 2015: Updated "Familiar & Enhancemenets" solution (this uses full .net) to RC1-Final. Updated the ASPNET5WebAPI to RC1-Final and also refactored it for a bit more like patterns I would use. For example, I put the dbcontext calls into a class that is designed to ensure that only notracking queries are executed since the dbcontext goes out of scope immediately and creating the tracking classes is a waste of time. 
+****************************
 October 2015: Updated the Familiar & Enhancements solution to Beta 8. Removed Console App. Replaced with tests and added a few new ones. That solution uses .NET 4.6, not ASP.NET 5.
 
 Beta 8 represents a "feature complete" version of what will be the EF7 pre-release along with ASPNET5. It is still not for production.
