@@ -3,7 +3,7 @@ Slides and Demos from 2015 Presentation
 
 Demos and PowerPoints for Julie Lerman's "EF7: Who are you and what have you done to my ORM?" presentation.  
 
-This talk was given at Boston Code Camp (March 21, 2015), Techorama (May 2015) and DevSum15 (May 2015).  
+This talk was given at Boston Code Camp (March 21, 2015), Techorama (May 2015) and DevSum15 (May 2015), DevIntersection (Oct 2015) and some user groups in late 2015.  
 
 The ASPNET5 app is just a simple setup so you can see how EF7 plugs in.  
 
