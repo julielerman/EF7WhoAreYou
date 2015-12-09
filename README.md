@@ -3,6 +3,8 @@ Slides and Demos from 2015 Presentation
 
 Demos and PowerPoints for Julie Lerman's "EF7: Who are you and what have you done to my ORM?" presentation.
 This talk was given at Boston Code Camp (March 21, 2015), Techorama (May 2015) and DevSum15 (May 2015).
+The ASPNET5 app is just a simple setup so you can see how EF7 plugs in.
+The Familiar And Enhancements app is full .NET with lots of InMemory and SqlServer tests to test out behavior, exploring what works about the same and what's new or changed. One of the things I spent a lot of time on is looking at the behavior of attaching disconnected entities. This is not exhaustive, just some things of interest that I can show in teh scope of a short conference talk. If you want exhaustive tests of every feature and behavior, you'll want to check out the http://github.com/aspnet/entityframework source.
 
 ****************************
 December 2015: Updated "Familiar & Enhancemenets" solution (this uses full .net) to RC1-Final. Updated the ASPNET5WebAPI to RC1-Final and also refactored it for a bit more like patterns I would use. For example, I put the dbcontext calls into a class that is designed to ensure that only notracking queries are executed since the dbcontext goes out of scope immediately and creating the tracking classes is a waste of time. 
