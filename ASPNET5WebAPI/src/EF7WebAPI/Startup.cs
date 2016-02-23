@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Data.Entity;
 using EF7Samurai.Model;
+using Microsoft.Extensions.PlatformAbstractions;
+
 
 namespace WebApplication1
 {
@@ -27,10 +29,15 @@ namespace WebApplication1
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services) {
       // Add framework services.
-      services.AddEntityFramework()
-        .AddSqlServer()
-        .AddDbContext<SamuraiContext>(options => options.UseSqlServer(Configuration["Data:SamuraiConnection:ConnectionString"]));
-      services.AddScoped<NonTrackingDataWrapper>();
+        services.AddEntityFramework()
+                 .AddNpgsql()
+                 .AddDbContext<SamuraiContext>(options =>
+                     options.UseNpgsql(Configuration["Data:PostgreConnection:ConnectionString"]));
+
+     // services.AddEntityFramework();
+    //     .AddSqlServer()
+    //     .AddDbContext<SamuraiContext>(options => options.UseSqlServer(Configuration["Data:SamuraiConnection:ConnectionString"]));
+    //   services.AddScoped<NonTrackingDataWrapper>();
    
       services.AddMvc()
         .AddJsonOptions(options =>

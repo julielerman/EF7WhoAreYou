@@ -12,7 +12,7 @@ namespace EF7Samurai.Model
       public DbSet<Quote> Quotes { get; set; }
       public DbSet<Maker> Makers { get; set; }
 
-
+   
         }
   }
 

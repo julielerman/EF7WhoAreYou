@@ -12,8 +12,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "EF7Samurai.B8.Domain": "1.0.0",
-          "EntityFramework.Core": "7.0.0-rc1-final",
-          "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+          "EntityFramework7.Npgsql": "3.1.0-rc1-3",
           "Microsoft.CSharp": "4.0.1-beta-23516",
           "System.Collections": "4.0.11-beta-23516",
           "System.Linq": "4.0.1-beta-23516",
@@ -81,24 +80,6 @@
         },
         "runtime": {
           "lib/dnx451/EntityFramework.Core.dll": {}
-        }
-      },
-      "EntityFramework.MicrosoftSqlServer/7.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework.Relational": "7.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/EntityFramework.MicrosoftSqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/net451/EntityFramework.MicrosoftSqlServer.dll": {}
         }
       },
       "EntityFramework.Relational/7.0.0-rc1-final": {
@@ -1823,8 +1804,7 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "EF7Samurai.B8.Domain": "1.0.0",
-          "EntityFramework.Core": "7.0.0-rc1-final",
-          "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+          "EntityFramework7.Npgsql": "3.1.0-rc1-3",
           "Microsoft.CSharp": "4.0.1-beta-23516",
           "System.Collections": "4.0.11-beta-23516",
           "System.Linq": "4.0.1-beta-23516",
@@ -1883,22 +1863,6 @@
         },
         "runtime": {
           "lib/dotnet5.4/EntityFramework.Core.dll": {}
-        }
-      },
-      "EntityFramework.MicrosoftSqlServer/7.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework.Relational": "7.0.0-rc1-final",
-          "System.Data.SqlClient": "4.0.0-beta-23516",
-          "System.Text.Encoding.CodePages": "4.0.1-beta-23516",
-          "System.Threading.Thread": "4.0.0-beta-23516",
-          "System.Threading.ThreadPool": "4.0.10-beta-23516"
-        },
-        "compile": {
-          "lib/dotnet5.4/EntityFramework.MicrosoftSqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet5.4/EntityFramework.MicrosoftSqlServer.dll": {}
         }
       },
       "EntityFramework.Relational/7.0.0-rc1-final": {
@@ -3434,20 +3398,6 @@
           "lib/dotnet5.4/System.Data.Common.dll": {}
         }
       },
-      "System.Data.SqlClient/4.0.0-beta-23516": {
-        "type": "package",
-        "dependencies": {
-          "System.Data.Common": "4.0.0",
-          "System.Globalization": "4.0.0",
-          "System.IO": "4.0.0",
-          "System.Runtime": "4.0.0",
-          "System.Threading.Tasks": "4.0.0",
-          "System.Xml.ReaderWriter": "4.0.0"
-        },
-        "compile": {
-          "ref/dotnet5.1/System.Data.SqlClient.dll": {}
-        }
-      },
       "System.Diagnostics.Contracts/4.0.1-beta-23516": {
         "type": "package",
         "dependencies": {
@@ -4112,16 +4062,6 @@
           "lib/DNXCore50/System.Text.Encoding.dll": {}
         }
       },
-      "System.Text.Encoding.CodePages/4.0.1-beta-23516": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.0.0",
-          "System.Text.Encoding": "4.0.10"
-        },
-        "compile": {
-          "ref/dotnet5.4/System.Text.Encoding.CodePages.dll": {}
-        }
-      },
       "System.Text.Encoding.Extensions/4.0.11-beta-23516": {
         "type": "package",
         "dependencies": {
@@ -4289,8 +4229,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "EF7Samurai.B8.Domain": "1.0.0",
-          "EntityFramework.Core": "7.0.0-rc1-final",
-          "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+          "EntityFramework7.Npgsql": "3.1.0-rc1-3",
           "Microsoft.CSharp": "4.0.1-beta-23516",
           "System.Collections": "4.0.11-beta-23516",
           "System.Linq": "4.0.1-beta-23516",
@@ -4358,24 +4297,6 @@
         },
         "runtime": {
           "lib/dnx451/EntityFramework.Core.dll": {}
-        }
-      },
-      "EntityFramework.MicrosoftSqlServer/7.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework.Relational": "7.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/EntityFramework.MicrosoftSqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/net451/EntityFramework.MicrosoftSqlServer.dll": {}
         }
       },
       "EntityFramework.Relational/7.0.0-rc1-final": {
@@ -6093,8 +6014,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "EF7Samurai.B8.Domain": "1.0.0",
-          "EntityFramework.Core": "7.0.0-rc1-final",
-          "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+          "EntityFramework7.Npgsql": "3.1.0-rc1-3",
           "Microsoft.CSharp": "4.0.1-beta-23516",
           "System.Collections": "4.0.11-beta-23516",
           "System.Linq": "4.0.1-beta-23516",
@@ -6162,24 +6082,6 @@
         },
         "runtime": {
           "lib/dnx451/EntityFramework.Core.dll": {}
-        }
-      },
-      "EntityFramework.MicrosoftSqlServer/7.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework.Relational": "7.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/EntityFramework.MicrosoftSqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/net451/EntityFramework.MicrosoftSqlServer.dll": {}
         }
       },
       "EntityFramework.Relational/7.0.0-rc1-final": {
@@ -7913,8 +7815,7 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "EF7Samurai.B8.Domain": "1.0.0",
-          "EntityFramework.Core": "7.0.0-rc1-final",
-          "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+          "EntityFramework7.Npgsql": "3.1.0-rc1-3",
           "Microsoft.CSharp": "4.0.1-beta-23516",
           "System.Collections": "4.0.11-beta-23516",
           "System.Linq": "4.0.1-beta-23516",
@@ -7973,22 +7874,6 @@
         },
         "runtime": {
           "lib/dotnet5.4/EntityFramework.Core.dll": {}
-        }
-      },
-      "EntityFramework.MicrosoftSqlServer/7.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework.Relational": "7.0.0-rc1-final",
-          "System.Data.SqlClient": "4.0.0-beta-23516",
-          "System.Text.Encoding.CodePages": "4.0.1-beta-23516",
-          "System.Threading.Thread": "4.0.0-beta-23516",
-          "System.Threading.ThreadPool": "4.0.10-beta-23516"
-        },
-        "compile": {
-          "lib/dotnet5.4/EntityFramework.MicrosoftSqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet5.4/EntityFramework.MicrosoftSqlServer.dll": {}
         }
       },
       "EntityFramework.Relational/7.0.0-rc1-final": {
@@ -9524,20 +9409,6 @@
           "lib/dotnet5.4/System.Data.Common.dll": {}
         }
       },
-      "System.Data.SqlClient/4.0.0-beta-23516": {
-        "type": "package",
-        "dependencies": {
-          "System.Data.Common": "4.0.0",
-          "System.Globalization": "4.0.0",
-          "System.IO": "4.0.0",
-          "System.Runtime": "4.0.0",
-          "System.Threading.Tasks": "4.0.0",
-          "System.Xml.ReaderWriter": "4.0.0"
-        },
-        "compile": {
-          "ref/dotnet5.1/System.Data.SqlClient.dll": {}
-        }
-      },
       "System.Diagnostics.Contracts/4.0.1-beta-23516": {
         "type": "package",
         "dependencies": {
@@ -10202,16 +10073,6 @@
           "lib/DNXCore50/System.Text.Encoding.dll": {}
         }
       },
-      "System.Text.Encoding.CodePages/4.0.1-beta-23516": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.0.0",
-          "System.Text.Encoding": "4.0.10"
-        },
-        "compile": {
-          "ref/dotnet5.4/System.Text.Encoding.CodePages.dll": {}
-        }
-      },
       "System.Text.Encoding.Extensions/4.0.11-beta-23516": {
         "type": "package",
         "dependencies": {
@@ -10386,8 +10247,7 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "EF7Samurai.B8.Domain": "1.0.0",
-          "EntityFramework.Core": "7.0.0-rc1-final",
-          "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+          "EntityFramework7.Npgsql": "3.1.0-rc1-3",
           "Microsoft.CSharp": "4.0.1-beta-23516",
           "System.Collections": "4.0.11-beta-23516",
           "System.Linq": "4.0.1-beta-23516",
@@ -10446,22 +10306,6 @@
         },
         "runtime": {
           "lib/dotnet5.4/EntityFramework.Core.dll": {}
-        }
-      },
-      "EntityFramework.MicrosoftSqlServer/7.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework.Relational": "7.0.0-rc1-final",
-          "System.Data.SqlClient": "4.0.0-beta-23516",
-          "System.Text.Encoding.CodePages": "4.0.1-beta-23516",
-          "System.Threading.Thread": "4.0.0-beta-23516",
-          "System.Threading.ThreadPool": "4.0.10-beta-23516"
-        },
-        "compile": {
-          "lib/dotnet5.4/EntityFramework.MicrosoftSqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet5.4/EntityFramework.MicrosoftSqlServer.dll": {}
         }
       },
       "EntityFramework.Relational/7.0.0-rc1-final": {
@@ -12038,50 +11882,6 @@
           "runtimes/unix/lib/dotnet5.4/System.Console.dll": {}
         }
       },
-      "runtime.unix.System.Data.SqlClient/4.0.0-beta-23516": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Win32.Primitives": "4.0.0",
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.0",
-          "System.Collections.NonGeneric": "4.0.0",
-          "System.Data.Common": "4.0.0",
-          "System.Diagnostics.Debug": "4.0.10",
-          "System.Globalization": "4.0.10",
-          "System.IO": "4.0.10",
-          "System.Linq": "4.0.0",
-          "System.Net.NameResolution": "4.0.0-beta-23516",
-          "System.Net.Primitives": "4.0.10",
-          "System.Net.Security": "4.0.0-beta-23516",
-          "System.Net.Sockets": "4.1.0-beta-23516",
-          "System.Reflection": "4.0.0",
-          "System.Reflection.TypeExtensions": "4.0.0",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.Extensions": "4.0.10",
-          "System.Runtime.Handles": "4.0.0",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0-beta-23516",
-          "System.Security.Cryptography.X509Certificates": "4.0.0-beta-23516",
-          "System.Security.Principal.Windows": "4.0.0-beta-23516",
-          "System.Text.Encoding": "4.0.10",
-          "System.Text.Encoding.CodePages": "4.0.0",
-          "System.Text.Encoding.Extensions": "4.0.10",
-          "System.Text.RegularExpressions": "4.0.10",
-          "System.Threading": "4.0.10",
-          "System.Threading.Tasks": "4.0.10",
-          "System.Threading.Thread": "4.0.0-beta-23516",
-          "System.Threading.ThreadPool": "4.0.10-beta-23516",
-          "System.Threading.Timer": "4.0.0",
-          "System.Xml.ReaderWriter": "4.0.0"
-        },
-        "compile": {
-          "ref/dotnet/_._": {}
-        },
-        "runtime": {
-          "runtimes/unix/lib/dotnet5.5/System.Data.SqlClient.dll": {}
-        }
-      },
       "runtime.unix.System.Diagnostics.Debug/4.0.11-beta-23516": {
         "type": "package",
         "compile": {
@@ -12215,28 +12015,6 @@
         },
         "runtime": {
           "runtimes/unix/lib/dotnet5.4/System.Security.Cryptography.X509Certificates.dll": {}
-        }
-      },
-      "runtime.unix.System.Text.Encoding.CodePages/4.0.1-beta-23516": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Globalization": "4.0.10",
-          "System.IO": "4.0.10",
-          "System.Reflection": "4.0.10",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.Extensions": "4.0.10",
-          "System.Runtime.Handles": "4.0.0",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10",
-          "System.Threading": "4.0.10"
-        },
-        "compile": {
-          "ref/dotnet/_._": {}
-        },
-        "runtime": {
-          "runtimes/unix/lib/dotnet5.4/System.Text.Encoding.CodePages.dll": {}
         }
       },
       "runtime.unix.System.Threading/4.0.11-beta-23516": {
@@ -12425,20 +12203,6 @@
         },
         "runtime": {
           "lib/dotnet5.4/System.Data.Common.dll": {}
-        }
-      },
-      "System.Data.SqlClient/4.0.0-beta-23516": {
-        "type": "package",
-        "dependencies": {
-          "System.Data.Common": "4.0.0",
-          "System.Globalization": "4.0.0",
-          "System.IO": "4.0.0",
-          "System.Runtime": "4.0.0",
-          "System.Threading.Tasks": "4.0.0",
-          "System.Xml.ReaderWriter": "4.0.0"
-        },
-        "compile": {
-          "ref/dotnet5.1/System.Data.SqlClient.dll": {}
         }
       },
       "System.Diagnostics.Contracts/4.0.1-beta-23516": {
@@ -12988,15 +12752,6 @@
           "lib/DNXCore50/System.Runtime.InteropServices.dll": {}
         }
       },
-      "System.Runtime.InteropServices.RuntimeInformation/4.0.0-beta-23516": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.0.0"
-        },
-        "compile": {
-          "ref/dotnet5.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
-        }
-      },
       "System.Runtime.Loader/4.0.0-beta-23516": {
         "type": "package",
         "dependencies": {
@@ -13160,16 +12915,6 @@
         },
         "runtime": {
           "lib/DNXCore50/System.Text.Encoding.dll": {}
-        }
-      },
-      "System.Text.Encoding.CodePages/4.0.1-beta-23516": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.0.0",
-          "System.Text.Encoding": "4.0.10"
-        },
-        "compile": {
-          "ref/dotnet5.4/System.Text.Encoding.CodePages.dll": {}
         }
       },
       "System.Text.Encoding.Extensions/4.0.11-beta-23516": {
@@ -13382,22 +13127,6 @@
         "lib/net451/EntityFramework.Core.xml",
         "lib/netcore50/EntityFramework.Core.dll",
         "lib/netcore50/EntityFramework.Core.xml"
-      ]
-    },
-    "EntityFramework.MicrosoftSqlServer/7.0.0-rc1-final": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "FMB2MgT5aXMF7qGMwf5AGcmpNFoT4s1w0QJ5h+L8W4gyMxWpYamGp9hms7rOSAWY44ZDl5ZMpxiTfu3nY3Nqeg==",
-      "files": [
-        "EntityFramework.MicrosoftSqlServer.7.0.0-rc1-final.nupkg",
-        "EntityFramework.MicrosoftSqlServer.7.0.0-rc1-final.nupkg.sha512",
-        "EntityFramework.MicrosoftSqlServer.nuspec",
-        "lib/dotnet5.4/EntityFramework.MicrosoftSqlServer.dll",
-        "lib/dotnet5.4/EntityFramework.MicrosoftSqlServer.xml",
-        "lib/net451/EntityFramework.MicrosoftSqlServer.dll",
-        "lib/net451/EntityFramework.MicrosoftSqlServer.xml",
-        "lib/netcore50/EntityFramework.MicrosoftSqlServer.dll",
-        "lib/netcore50/EntityFramework.MicrosoftSqlServer.xml"
       ]
     },
     "EntityFramework.Relational/7.0.0-rc1-final": {
@@ -14820,18 +14549,6 @@
         "runtimes/unix/lib/dotnet5.4/System.Console.dll"
       ]
     },
-    "runtime.unix.System.Data.SqlClient/4.0.0-beta-23516": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "YGh15CgZtbDQTWOBkfxjFEvraWHtJn0mh1bfhD+VqIv+dufv3UfNlFIPwwCL5z5M2lAqEbQr5e1duXxK6JRunA==",
-      "files": [
-        "ref/dotnet/_._",
-        "runtime.unix.System.Data.SqlClient.4.0.0-beta-23516.nupkg",
-        "runtime.unix.System.Data.SqlClient.4.0.0-beta-23516.nupkg.sha512",
-        "runtime.unix.System.Data.SqlClient.nuspec",
-        "runtimes/unix/lib/dotnet5.5/System.Data.SqlClient.dll"
-      ]
-    },
     "runtime.unix.System.Diagnostics.Debug/4.0.11-beta-23516": {
       "type": "package",
       "serviceable": true,
@@ -14914,18 +14631,6 @@
         "runtime.unix.System.Security.Cryptography.X509Certificates.4.0.0-beta-23516.nupkg.sha512",
         "runtime.unix.System.Security.Cryptography.X509Certificates.nuspec",
         "runtimes/unix/lib/dotnet5.4/System.Security.Cryptography.X509Certificates.dll"
-      ]
-    },
-    "runtime.unix.System.Text.Encoding.CodePages/4.0.1-beta-23516": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "/BYiBjE6Rz9Blv2Du4xjgHE1Ayc0jJrsi2uEOrjaz/tEOhXWQxesxZs3CtL57Jy4oEzZuIdTcGjRCK3X8PcLvQ==",
-      "files": [
-        "ref/dotnet/_._",
-        "runtime.unix.System.Text.Encoding.CodePages.4.0.1-beta-23516.nupkg",
-        "runtime.unix.System.Text.Encoding.CodePages.4.0.1-beta-23516.nupkg.sha512",
-        "runtime.unix.System.Text.Encoding.CodePages.nuspec",
-        "runtimes/unix/lib/dotnet5.4/System.Text.Encoding.CodePages.dll"
       ]
     },
     "runtime.unix.System.Threading/4.0.11-beta-23516": {
@@ -15365,38 +15070,6 @@
         "System.Data.Common.4.0.1-beta-23516.nupkg",
         "System.Data.Common.4.0.1-beta-23516.nupkg.sha512",
         "System.Data.Common.nuspec"
-      ]
-    },
-    "System.Data.SqlClient/4.0.0-beta-23516": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "Skttn2W8dBPf5eKZmiwzmoHTjE5cdvsX4ks/4qACWIehOXn0BYO2BtHD4I6fZZLy/jcW+xMCoom3BLe/1O1uuA==",
-      "files": [
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Data.SqlClient.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "ref/dotnet5.1/de/System.Data.SqlClient.xml",
-        "ref/dotnet5.1/es/System.Data.SqlClient.xml",
-        "ref/dotnet5.1/fr/System.Data.SqlClient.xml",
-        "ref/dotnet5.1/it/System.Data.SqlClient.xml",
-        "ref/dotnet5.1/ja/System.Data.SqlClient.xml",
-        "ref/dotnet5.1/ko/System.Data.SqlClient.xml",
-        "ref/dotnet5.1/ru/System.Data.SqlClient.xml",
-        "ref/dotnet5.1/System.Data.SqlClient.dll",
-        "ref/dotnet5.1/System.Data.SqlClient.xml",
-        "ref/dotnet5.1/zh-hans/System.Data.SqlClient.xml",
-        "ref/dotnet5.1/zh-hant/System.Data.SqlClient.xml",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Data.SqlClient.dll",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "runtime.json",
-        "System.Data.SqlClient.4.0.0-beta-23516.nupkg",
-        "System.Data.SqlClient.4.0.0-beta-23516.nupkg.sha512",
-        "System.Data.SqlClient.nuspec"
       ]
     },
     "System.Diagnostics.Contracts/4.0.1-beta-23516": {
@@ -17578,26 +17251,6 @@
         "System.Runtime.InteropServices.nuspec"
       ]
     },
-    "System.Runtime.InteropServices.RuntimeInformation/4.0.0-beta-23516": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "ZEMNyVBUeQE2hXkXsw8jF4d1ev5H6CT3N4sbnvrM6J6EVln2stGxSHq/QawZVO0zYbMXeYBzM9qLxrz26utSHw==",
-      "files": [
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "ref/dotnet5.1/System.Runtime.InteropServices.RuntimeInformation.dll",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "runtime.json",
-        "System.Runtime.InteropServices.RuntimeInformation.4.0.0-beta-23516.nupkg",
-        "System.Runtime.InteropServices.RuntimeInformation.4.0.0-beta-23516.nupkg.sha512",
-        "System.Runtime.InteropServices.RuntimeInformation.nuspec"
-      ]
-    },
     "System.Runtime.Loader/4.0.0-beta-23516": {
       "type": "package",
       "serviceable": true,
@@ -17986,36 +17639,6 @@
         "System.Text.Encoding.4.0.11-beta-23516.nupkg",
         "System.Text.Encoding.4.0.11-beta-23516.nupkg.sha512",
         "System.Text.Encoding.nuspec"
-      ]
-    },
-    "System.Text.Encoding.CodePages/4.0.1-beta-23516": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "Zhn1eDQqp0cIxuYkzfOvuUK2am6NjRt4swBEz7aYAYs3hXXRq930auBu1Ob3cN3si2okfNg30/OiPBe0W30PiQ==",
-      "files": [
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "ref/dotnet5.4/de/System.Text.Encoding.CodePages.xml",
-        "ref/dotnet5.4/es/System.Text.Encoding.CodePages.xml",
-        "ref/dotnet5.4/fr/System.Text.Encoding.CodePages.xml",
-        "ref/dotnet5.4/it/System.Text.Encoding.CodePages.xml",
-        "ref/dotnet5.4/ja/System.Text.Encoding.CodePages.xml",
-        "ref/dotnet5.4/ko/System.Text.Encoding.CodePages.xml",
-        "ref/dotnet5.4/ru/System.Text.Encoding.CodePages.xml",
-        "ref/dotnet5.4/System.Text.Encoding.CodePages.dll",
-        "ref/dotnet5.4/System.Text.Encoding.CodePages.xml",
-        "ref/dotnet5.4/zh-hans/System.Text.Encoding.CodePages.xml",
-        "ref/dotnet5.4/zh-hant/System.Text.Encoding.CodePages.xml",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "runtime.json",
-        "System.Text.Encoding.CodePages.4.0.1-beta-23516.nupkg",
-        "System.Text.Encoding.CodePages.4.0.1-beta-23516.nupkg.sha512",
-        "System.Text.Encoding.CodePages.nuspec"
       ]
     },
     "System.Text.Encoding.Extensions/4.0.0": {

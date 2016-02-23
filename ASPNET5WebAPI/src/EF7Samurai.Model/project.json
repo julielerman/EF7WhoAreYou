@@ -17,8 +17,7 @@
         "System.Linq": "4.0.1-beta-23516",
         "System.Runtime": "4.0.21-beta-23516",
         "System.Threading": "4.0.11-beta-23516",
-        "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
-        "EntityFramework.Core": "7.0.0-rc1-final",
-        "EF7Samurai.B8.Domain": "1.0.0-*"
+        "EntityFramework7.Npgsql": "3.1.0-rc1-3",
+          "EF7Samurai.B8.Domain": "1.0.0-*"
     }
 }
